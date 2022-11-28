@@ -4,6 +4,9 @@ All notable changes to the "xaviabot-snippets" extension will be documented in t
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.4] - 2022-11-28
+- Remade extension
+
 ## [0.0.2] - 2022-11-28
 - Added `xpc`, `xpcnc` and `xpcof` snippets.
 
