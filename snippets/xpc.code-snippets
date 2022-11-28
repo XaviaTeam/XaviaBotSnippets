@@ -1,0 +1,69 @@
+{
+    "XaviaBot Command Template Full": {
+        "prefix": "xpc",
+        "body": [
+            "const config = {",
+            "    name: \"$1\",",
+            "    aliases: [\"\"],",
+            "    description: \"$2\",",
+            "    usage: \"$3\",",
+            "    cooldown: 3,",
+            "    permissions: [0, 1, 2],",
+            "    credits: \"$4\",",
+            "    extra: {}",
+            "}",
+            "",
+            "const langData = {",
+            "    \"vi_VN\": {",
+            "        \"message\": \"This is an example message\",",
+            "    },",
+            "    \"en_US\": {",
+            "        \"message\": \"This is an example message\",",
+            "    }",
+            "}",
+            "",
+            "async function onCall({ message, args, getLang, extra, data, userPermissions, prefix }) {",
+            "    message.send(getLang(\"message\"));",
+            "}",
+            "",
+            "export default {",
+            "    config,",
+            "    langData,",
+            "    onCall",
+            "}"
+        ],
+        "description": "XaviaBot Command Template Full"
+    },
+    "XaviaBot Command Template without Config": {
+        "prefix": "xpcnc",
+        "body": [
+            "const langData = {",
+            "    \"vi_VN\": {",
+            "        \"message\": \"This is an example message\",",
+            "    },",
+            "    \"en_US\": {",
+            "        \"message\": \"This is an example message\",",
+            "    }",
+            "}",
+            "",
+            "async function onCall({ message, args, getLang, extra, data, userPermissions, prefix }) {",
+            "    message.send(getLang(\"message\"));",
+            "}",
+            "",
+            "export default {",
+            "    langData,",
+            "    onCall",
+            "}"
+        ],
+        "description": "XaviaBot Command Template without Config"
+    },
+    "XaviaBot Command Template with only one Function exported": {
+        "prefix": "xpcof",
+        "body": [
+            "export default function ({ message, args, getLang, extra, data, userPermissions, prefix }) {",
+            "    message.send(\"Hello Xavia!\");",
+            "}"
+        ],
+        "description": "XaviaBot Command Template with only one Function exported"
+    }
+}

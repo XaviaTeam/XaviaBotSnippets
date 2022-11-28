@@ -1,43 +1,29 @@
 {
-  "name": "xaviabot-snippets",
-  "displayName": "XaviaBot Snippets",
+  "name": "xaviabot-snippetss",
+  "displayName": "XaviaBot Snippetss",
   "publisher": "XaviaTeam",
   "description": "Snippets for XaviaBot plugins!",
-  "icon": "XaviaBotSnippets.png",
-  "version": "0.0.3",
+  "icon": "images/logo.png",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.73.0"
   },
   "categories": [
-    "Other",
     "Snippets"
   ],
-  "activationEvents": [
-    "onCommand:xaviabot-snippets.helloWorld"
-  ],
+  "activationEvents": [],
   "main": "./dist/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "xaviabot-snippets.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/XaviaTeam/XaviaBotSnippets.git"
   },
-  "scripts": {
-    "vscode:prepublish": "npm run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/xpc.code-snippets"
+      }
+    ]
   },
   "devDependencies": {
     "@types/vscode": "^1.73.0",
