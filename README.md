@@ -4,6 +4,6 @@ xaviabot-snippets is a collection of snippets for [XaviaBot](https://github.com/
 
 All available snippets are listed below.
 
-- xpc - XaviaBot Command Full Template
+- xpc - XaviaBot Command Template Full
 - xpcnc - XaviaBot Command Template without Config
-- xpcof - XaviaBot Command Template with only Function
+- xpcof - XaviaBot Command Template with only one Function

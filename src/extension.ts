@@ -1,13 +1,5 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-
-// Snippet function
-// description: The description of the snippet
-// prefix: The prefix of the snippet
-// body: The body of the snippet
-// scope: The scope of the snippet
 function snippet(data: { description: string, prefix: string, body: string[], scope: string }) {
 	return {
 		description: data.description,
@@ -16,9 +8,6 @@ function snippet(data: { description: string, prefix: string, body: string[], sc
 		scope: data.scope
 	};
 }
-
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 
 class Snippets extends vscode.CompletionItem {
 	constructor(label: string, kind: vscode.CompletionItemKind, description: string, detail: string, insertText: string) {
@@ -34,10 +23,74 @@ export function activate(context: vscode.ExtensionContext) {
 	// Snippets
 	let snippets = [
 		snippet({
-			description: "Log to console",
-			prefix: "log",
-			body: ["console.log($1);"],
-			scope: "javascript,typescript,typescriptreact,javascriptreact"
+			description: "XaviaBot Command Template Full",
+			prefix: "xpc",
+			body: [
+				"const config = {",
+				"    name: \"$1\",",
+				"    aliases: [\"\"],",
+				"    description: \"$2\",",
+				"    usage: \"$3\",",
+				"    cooldown: 3,",
+				"    permissions: [0, 1, 2],",
+				"    credits: \"$4\",",
+				"    extra: {}",
+				"}",
+				"",
+				"const langData = {",
+				"    \"vi_VN\": {",
+				"        \"message\": \"This is an example message\",",
+				"    },",
+				"    \"en_US\": {",
+				"        \"message\": \"This is an example message\",",
+				"    }",
+				"}",
+				"",
+				"async function onCall({ message, args, getLang, extra, data, userPermissions, prefix }) {",
+				"    message.send(getLang(\"message\"));",
+				"}",
+				"",
+				"export default {",
+				"    config,",
+				"    langData,",
+				"    onCall",
+				"}"
+			],
+			scope: "javascript"
+		}),
+		snippet({
+			description: "XaviaBot Command Template without Config",
+			prefix: "xpcnc",
+			body: [
+				"const langData = {",
+				"    \"vi_VN\": {",
+				"        \"message\": \"This is an example message\",",
+				"    },",
+				"    \"en_US\": {",
+				"        \"message\": \"This is an example message\",",
+				"    }",
+				"}",
+				"",
+				"async function onCall({ message, args, getLang, extra, data, userPermissions, prefix }) {",
+				"    message.send(getLang(\"message\"));",
+				"}",
+				"",
+				"export default {",
+				"    langData,",
+				"    onCall",
+				"}"
+			],
+			scope: "javascript"
+		}),
+		snippet({
+			description: "XaviaBot Command Template with only one Function",
+			prefix: "xpcof",
+			body: [
+				"export default function ({ message, args, getLang, extra, data, userPermissions, prefix }) {",
+				"    message.send(\"Hello Xavia!\");",
+				"}"
+			],
+			scope: "javascript"
 		})
 	]
 
